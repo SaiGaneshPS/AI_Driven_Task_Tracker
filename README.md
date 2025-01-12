@@ -12,7 +12,7 @@ This project is an Intelligent Task Management System that leverages Natural Lan
     - `schedule_task`
     - `cancel_task`
     - `inquire_status`
-  - For example: "I need to [schedule](intent) a [meeting](task_name) on [Monday](date) at [10 AM](time)" will identify the intent as `schedule_task`.
+  - For example: "I need to schedule(intent) a meeting(task_name) on Monday(date) at 10 AM(time)" will identify the intent as `schedule_task`.
     More intents will be added in future updates.
 
 - **User Authentication:** Secure user authentication with JWT tokens.
