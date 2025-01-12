@@ -1,0 +1,48 @@
+services:
+  rasa:
+    image: rasa/rasa # Use the official Rasa image
+    container_name: rasa_server
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./rasa:/app # Mount the Rasa project
+      - ./rasa/models:/app/models # Persist models
+    command: >
+      run 
+      --enable-api 
+      --cors "*" 
+      --model /app/models/
+    restart: always
+
+  backend:
+    build:
+      context: . # Current directory is Backend/
+      dockerfile: Dockerfile # Explicitly specify Dockerfile
+    container_name: node_backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - RASA_URL=http://rasa:5005
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_PORT=${DB_PORT}
+      - JWT_SECRET=${JWT_SECRET}
+    extra_hosts: # Add this section
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - rasa
+    restart: always
+
+    # frontend:
+    #   build:
+    #     context: ../FrontEnd # Relative path from Backend/
+    #     dockerfile: Dockerfile # Ensure FrontEnd/Dockerfile exists
+    #   container_name: react_frontend
+    #   ports:
+    #     - "8080:80" # Host:Container
+    #   depends_on:
+    #     - backend
+    #   restart: always

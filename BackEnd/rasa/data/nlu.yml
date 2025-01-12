@@ -1,0 +1,31 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - hey
+      - good morning
+      - good evening
+
+  - intent: schedule_task
+    examples: |
+      - I need to [schedule](intent) a [meeting](task_name) on [Monday](date) at [10 AM](time)
+      - Can you [set up](intent) a [call](task_name) for [tomorrow](date) at [2 PM](time)?
+      - Please [add](intent) a [presentation](task_name) to my calendar on [Friday](date)
+      - I want to [create](intent) a [report](task_name) due by [next Monday](date)
+
+  - intent: cancel_task
+    examples: |
+      - I want to [cancel](intent) my [meeting](task_name) on [Monday](date)
+      - Please [remove](intent) the [call](task_name) scheduled for [tomorrow](date)
+      - Cancel my [presentation](task_name) on [Friday](date)
+      - [Delete](intent) the [report](task_name) task
+
+  - intent: inquire_status
+    examples: |
+      - What is the status of my [meeting](task_name)?
+      - Do I have any [calls](task_name) scheduled?
+      - Is my [presentation](task_name) confirmed?
+      - Check the [report](task_name) task status

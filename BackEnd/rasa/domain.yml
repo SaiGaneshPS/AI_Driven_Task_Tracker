@@ -1,0 +1,18 @@
+version: "3.1"
+
+intents:
+  - greet
+  - schedule_task
+  - cancel_task
+  - inquire_status
+  # Add more intents as needed
+
+entities:
+  - task_name
+  - date
+  - time
+  - priority
+
+responses: {} # No responses needed since we're not building a chatbot
+
+actions: []

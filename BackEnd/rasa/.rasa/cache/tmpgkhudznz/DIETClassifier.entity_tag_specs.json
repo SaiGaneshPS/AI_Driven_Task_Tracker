@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-date",
+      "2": "I-date",
+      "3": "L-date",
+      "4": "U-date",
+      "5": "B-intent",
+      "6": "I-intent",
+      "7": "L-intent",
+      "8": "U-intent",
+      "9": "B-task_name",
+      "10": "I-task_name",
+      "11": "L-task_name",
+      "12": "U-task_name",
+      "13": "B-time",
+      "14": "I-time",
+      "15": "L-time",
+      "16": "U-time",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-date": 1,
+      "I-date": 2,
+      "L-date": 3,
+      "U-date": 4,
+      "B-intent": 5,
+      "I-intent": 6,
+      "L-intent": 7,
+      "U-intent": 8,
+      "B-task_name": 9,
+      "I-task_name": 10,
+      "L-task_name": 11,
+      "U-task_name": 12,
+      "B-time": 13,
+      "I-time": 14,
+      "L-time": 15,
+      "U-time": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]
