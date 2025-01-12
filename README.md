@@ -1,4 +1,4 @@
-# Project Title: Intelligent Task Management System
+# Project Title: AI-Driven Task Manager
 
 ## Overview
 
